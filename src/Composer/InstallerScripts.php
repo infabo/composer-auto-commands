@@ -32,7 +32,7 @@ class InstallerScripts implements InstallerScriptsRegistration
     public static function register(Event $event, ScriptDispatcher $scriptDispatcher)
     {
         $scriptDispatcher->addInstallerScript(
-            new ConsoleCommand('install:fixfolderstructure', [], '', null, false),
+            new ConsoleCommand('install:fixfolderstructure', ['-vvv'], '', null, false),
             20
         );
         $typo3IsSetUp = getenv('TYPO3_IS_SET_UP') || file_exists(getenv('TYPO3_PATH_ROOT') . '/typo3conf/LocalConfiguration.php');
